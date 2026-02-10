@@ -1,0 +1,9 @@
+﻿langchain-classic
+langchain-openai
+langchain-huggingface
+langchain-community
+chromadb
+pypdf
+python-dotenv
+sentence-transformers
+tiktoken

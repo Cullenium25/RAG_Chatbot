@@ -1,0 +1,9 @@
+# Ignore virtual environment directory
+.venv/
+__pycache__/
+vector_db/
+data/
+.env
+*.pyc
+.ipynb_checkpoints/
+EOF
