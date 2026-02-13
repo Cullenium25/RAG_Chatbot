@@ -7,3 +7,4 @@ data/
 *.pyc
 .ipynb_checkpoints/
 EOF
+ContinuEd_RAG.ipynb
