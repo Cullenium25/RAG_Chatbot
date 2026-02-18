@@ -64,11 +64,21 @@ def start_session():
             print(f"\nAI RESPONSE:\n{response['answer']}")
             
             # --- SOURCE VALIDATION ---
+            # --- IMPROVED SOURCE VALIDATION ---
             print("\nSOURCES REFERENCED:")
-            sources = {os.path.basename(doc.metadata.get('source', 'Unknown')) for doc in response['context']}
-            for i, src in enumerate(sources, 1):
-                print(f"[{i}] {src}")
+            unique_sources = []
+            for doc in response['context']:
+                filename = os.path.basename(doc.metadata.get('source', 'Unknown'))
+                # Extract headers (MarkdownHeaderTextSplitter saves them as 'Header 1', 'Header 2', etc.)
+                section = doc.metadata.get('Header 1') or doc.metadata.get('Header 2') or "General"
                 
+                source_label = f"{filename} (Section: {section})"
+                if source_label not in unique_sources:
+                    unique_sources.append(source_label)
+
+            for i, src in enumerate(unique_sources, 1):
+                print(f"[{i}] {src}")
+                            
         except Exception as e:
             print(f"Error: {e}. Ensure LM Studio is running.")
 
