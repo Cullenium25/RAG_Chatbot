@@ -1,4 +1,4 @@
-# ContinuEd RAG: Clinical Research AI Assistant
+# Clinical Research AI Assistant
 An intelligent Retrieval-Augmented Generation (RAG) system designed to assist researchers and students in navigating complex clinical research transcripts. This project leverages local LLM inference and advanced multi-query retrieval to provide precise, context-aware answers.
 
 ## Key Features
